@@ -1,6 +1,6 @@
 export default function SubHeroSection() {
   return (
-    <div className="h-123 flex items-center justify-center">
+    <div className="h-123 flex items-center justify-center bg-white">
       <div className="text-[2rem] leading-11 font-medium text-center">
         <p>
           우리 모두 다 다른 모양과 크기를 가졌지만,{" "}

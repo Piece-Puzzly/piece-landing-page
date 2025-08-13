@@ -11,7 +11,7 @@ export default function HeroSection() {
       <div className="absolute bottom-10 z-10 animate-bounce">
         <Image src={"/arrow.svg"} width={40} height={40} alt="" />
       </div>
-      <Header />
+      
       <div className="text-center text-white font-semibold relative z-10">
         <div className="text-5xl leading-16 mb-9">
           <p>가치관 기반의 성숙한 만남을</p>

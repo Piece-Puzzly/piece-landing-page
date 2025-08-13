@@ -1,10 +1,12 @@
 import SectionDescription from "@/components/section-description";
 import SectionHeader from "@/components/section-header";
 import SectionTitle from "@/components/section-title";
+import ValuePickCards from "./value-pick-cards";
+import ValuePickKeywords from "./value-pick-keywords";
 
 export default function ValuePickSection() {
   return (
-    <div className="pt-45 px-60 space-y-20">
+    <div className="pt-45 px-60 space-y-20 mb-45">
       <SectionHeader>
         <SectionTitle>
           <p>
@@ -19,7 +21,10 @@ export default function ValuePickSection() {
           </p>
         </SectionDescription>
       </SectionHeader>
-      <div>asdf</div>
+      <div className="h-[36.9375rem] w-360 relative mx-auto">
+        <ValuePickCards />
+        <ValuePickKeywords />
+      </div>
     </div>
   );
 }

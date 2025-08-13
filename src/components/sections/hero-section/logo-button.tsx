@@ -11,7 +11,13 @@ export default function LogoButton() {
       onClick={() => location.reload()}
       className="-mx-4 -my-2 h-auto hover:bg-transparent"
     >
-      <Image src={Logo} width="85.38" height="32" alt="Piece" />
+      <Image
+        src={Logo}
+        width="85.38"
+        height="32"
+        alt="Piece"
+        className="h-8 w-auto"
+      />
     </Button>
   );
 }

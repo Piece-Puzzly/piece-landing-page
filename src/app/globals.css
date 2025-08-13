@@ -45,7 +45,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: #f4f6fa;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -131,6 +131,16 @@
       #7257a5 60%,
       #281f4e 80%,
       #00001a 100%
+    );
+  }
+  .value-share-gradient {
+    background-image: linear-gradient(
+      to bottom,
+      #f4f6fa 0%,
+      #fce5eb 70%,
+      #fdd2de 80%,
+      #e9d7fe 90%,
+      #f4f6fa 100%
     );
   }
 }

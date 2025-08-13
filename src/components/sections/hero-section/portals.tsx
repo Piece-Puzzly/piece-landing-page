@@ -18,7 +18,13 @@ export default function Portals() {
           //   className=" hover:bg-accent/10"
           className="size-8 -m-1 flex items-center justify-center"
         >
-          <Image src={iconSrc} width="24" height="24" alt={title} />
+          <Image
+            src={iconSrc}
+            width="24"
+            height="24"
+            alt={title}
+            className="size-6"
+          />
         </a>
       ))}
     </div>
