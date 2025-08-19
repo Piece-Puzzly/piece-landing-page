@@ -1,23 +1,41 @@
-import Image from "next/image";
-import Link from "next/link";
+import ChannelTalkIcon from "@/assets/channel-talk.svg";
+import InstagramIcon from "@/assets/instagram.svg";
 import { Separator } from "../ui/separator";
 
 const actionInfo = [
-  { title: "카카오 채널톡", href: "", iconSrc: "/footer-channel-talk.svg" },
-  { title: "인스타그램", href: "", iconSrc: "/footer-instagram.svg" },
+  { title: "카카오 채널톡", href: "", icon: ChannelTalkIcon },
+  { title: "인스타그램", href: "", icon: InstagramIcon },
 ];
 
 export default function Footer() {
   return (
-    <footer className="p-15 text-[#6C7073] flex items-start">
-      <div className="space-y-4 flex-1">
+    <footer className="p-15 text-[#6C7073] flex items-start border-t border-[#CBD1D9]">
+      <div className="space-y-8 flex-1">
         <div className="space-y-3 text-3.5 leading-5">
-          <Link href="">이용 약관</Link>
-          <Link href="">개인정보 처리방침</Link>
+          <div>
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold"
+            >
+              이용 약관
+            </a>
+          </div>
+          <div>
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold"
+            >
+              개인정보 처리방침
+            </a>
+          </div>
         </div>
-        <div className="space-y-3">
+        <div className="space-y-3 font-medium">
           <div>Copyright © 2025 Piece Inc. All rights reserved.</div>
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex gap-4 flex-wrap items-center">
             <div>퍼즐리</div>
             <Separator orientation="vertical" className="h-3! bg-[#CBD1D9]" />
             <div>서울특별시 서초구 방배동 870-32, 501</div>
@@ -31,16 +49,16 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex gap-5">
-        {actionInfo.map(({ title, href, iconSrc }) => (
-          <Link key={title} className="size-8 -mx-1" href={href}>
-            <Image
-              width={24}
-              height={24}
-              className="size-6"
-              src={iconSrc}
-              alt={title}
-            />
-          </Link>
+        {actionInfo.map(({ title, href, icon: Icon }) => (
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            key={title}
+            className="size-8 -mx-1"
+            href={href}
+          >
+            <Icon className="size-6" />
+          </a>
         ))}
       </div>
     </footer>

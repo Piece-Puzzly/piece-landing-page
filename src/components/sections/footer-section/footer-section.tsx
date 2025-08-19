@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import AppDownloadButton from "@/components/app-download-button";
 
 export default function FooterSection() {
   return (
@@ -9,9 +9,7 @@ export default function FooterSection() {
           <span className="text-primary">Piece</span>에서 내 조각을 찾아보세요.
         </p>
       </div>
-      <Button className="py-5 px-9 rounded-full text-2xl leading-8 h-auto">
-        앱 다운로드
-      </Button>
+      <AppDownloadButton />
     </div>
   );
 }

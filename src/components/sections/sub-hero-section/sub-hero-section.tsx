@@ -1,7 +1,10 @@
 export default function SubHeroSection() {
   return (
-    <div className="h-123 flex items-center justify-center bg-white">
-      <div className="text-[2rem] leading-11 font-medium text-center">
+    <div
+      className="py-20 lg:py-45 flex items-center justify-center bg-white px-10"
+      id="sub-hero-section"
+    >
+      <div className="text-[1.25rem] leading-6 lg:text-[2rem] lg:leading-11 font-medium text-center">
         <p>
           우리 모두 다 다른 모양과 크기를 가졌지만,{" "}
           <span className="text-primary">퍼즐</span>처럼
