@@ -10,6 +10,8 @@ import SectionTitle from "@/components/section-title";
 import ValuePickCards from "./value-pick-cards";
 import ValuePickKeywords from "./value-pick-keywords";
 
+// const textInfo
+
 export default function ValuePickSection() {
   // 1. Framer Motion hooks and state for the animation
   const targetRef = useRef<HTMLDivElement>(null);
@@ -45,8 +47,11 @@ export default function ValuePickSection() {
     <Section>
       <SectionHeader>
         <SectionTitle>
-          <p>
+          <p className="flex items-center gap-4">
             <span className="text-primary">가치관 PICK,</span>
+            <span className="font-medium py-2 lg:py-3 px-3 lg:px-4 text-xs lg:text-base leading-4 text-[#FF7490] bg-[#FFE3E9] rounded-full align-middle">
+              나와 같은
+            </span>
           </p>
           <p>나와 닮은 마음을 쉽게 찾아봐요!</p>
         </SectionTitle>

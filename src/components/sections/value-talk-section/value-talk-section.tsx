@@ -13,12 +13,6 @@ const imgInfo = [
 ];
 
 export default function ValueTalkSection() {
-  // --- ⬇️ useRef와 useInView 배열을 만드는 코드를 삭제합니다. ⬇️ ---
-  // const cardRefs = imgInfo.map(() => useRef<HTMLDivElement>(null));
-  // const inViews = cardRefs.map((ref) =>
-  //   useInView(ref, { amount: 0.5, once: true })
-  // );
-
   return (
     <div
       className={cn(
