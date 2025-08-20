@@ -7,10 +7,21 @@ import Section from "@/components/section";
 import SectionDescription from "@/components/section-description";
 import SectionHeader from "@/components/section-header";
 import SectionTitle from "@/components/section-title";
+import { useMediaQuery } from "@/hooks/use-media-query";
 import ValuePickCards from "./value-pick-cards";
 import ValuePickKeywords from "./value-pick-keywords";
 
-// const textInfo
+const textInfo = {
+  pc: [
+    "연애 스타일, 관계의 중요 요소 등 자신의 생각을 고르면,",
+    "상대방과 나의 가치관이 얼마나 일치하는지 한눈에 확인할 수 있어요.",
+  ],
+  mobile: [
+    "연애 스타일, 관계의 중요 요소 등 자신의",
+    "생각을 고르면, 상대방과 나의 가치관이 얼마나",
+    "일치하는지 한눈에 확인할 수 있어요.",
+  ],
+};
 
 export default function ValuePickSection() {
   // 1. Framer Motion hooks and state for the animation
@@ -43,6 +54,7 @@ export default function ValuePickSection() {
 
   // 4. Hook to map vertical scroll to horizontal movement
   const x = useTransform(scrollYProgress, [0, 1], [0, -horizontalOffset]);
+  const isTablet = useMediaQuery(1024);
   return (
     <Section>
       <SectionHeader>
@@ -56,10 +68,9 @@ export default function ValuePickSection() {
           <p>나와 닮은 마음을 쉽게 찾아봐요!</p>
         </SectionTitle>
         <SectionDescription>
-          <p>연애 스타일, 관계의 중요 요소 등 자신의 생각을 고르면,</p>
-          <p>
-            상대방과 나의 가치관이 얼마나 일치하는지 한눈에 확인할 수 있어요.
-          </p>
+          {textInfo[isTablet ? "mobile" : "pc"].map((text, index) => (
+            <p key={index}>{text}</p>
+          ))}
         </SectionDescription>
       </SectionHeader>
 
