@@ -30,6 +30,7 @@ export default function RootLayout({
         className={`${pretendard.variable} ${pretendard.className} antialiased relative`}
       >
         {children}
+        
         <Fab />
       </body>
     </html>
