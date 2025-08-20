@@ -8,7 +8,7 @@ const scaleMap = [
   { fontSize: "14", title: "축소" },
 ];
 export default function Fab() {
-  const [scale, setScale] = useState<number>(1); // 기본 배율 1 (100%)
+  const [scale, setScale] = useState<number>(0); // 기본 배율 1 (100%)
   useEffect(() => {
     document.documentElement.className = `text-[16px] lg:text-[${scaleMap[scale].fontSize}px] break-keep`;
     // 16px 기준, rem 1rem = 16px * scale
