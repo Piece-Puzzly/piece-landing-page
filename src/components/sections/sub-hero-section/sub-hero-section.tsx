@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 const textInfo: Record<string, ReactNode[]> = {
   pc: [
     <p key={0}>
-      우리 모두 다 다른 모양과 크기를 가졌지만,{" "}
+      우리 모두 다른 모양과 크기를 가졌지만,{" "}
       <span className="text-primary">퍼즐</span>처럼
     </p>,
     <p key={1}>빈 곳을 채우며 맞물리는 인연이 있습니다.</p>,
@@ -19,7 +19,7 @@ const textInfo: Record<string, ReactNode[]> = {
     </p>,
   ],
   mobile: [
-    <p key={0}>우리 모두 다 다른 모양과 크기를 가졌지만,</p>,
+    <p key={0}>우리 모두 다른 모양과 크기를 가졌지만,</p>,
     <p key={1}>
       <span className="text-primary">퍼즐</span>처럼 빈 곳을 채우며 맞물리는
     </p>,
