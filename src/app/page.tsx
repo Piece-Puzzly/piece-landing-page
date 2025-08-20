@@ -1,5 +1,3 @@
-"use client";
-
 import Footer from "@/components/footer/footer";
 import FaqSection from "@/components/sections/faq-section/faq-section";
 import FooterSection from "@/components/sections/footer-section/footer-section";

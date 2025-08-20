@@ -10,8 +10,8 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import { easeOut, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { Indicator } from "./indicator";
-import { MobileProcedure } from "./mobile-procedure";
+import Indicator from "./indicator";
+import MobileProcedure from "./mobile-procedure";
 
 export type ProcedureInfo = {
   title: string;

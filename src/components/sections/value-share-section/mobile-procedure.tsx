@@ -5,10 +5,10 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 // 이 컴포넌트들은 사용하시는 경로에 맞게 수정해주세요.
-import { Indicator } from "./indicator";
+import Indicator from "./indicator";
 import { ProcedureInfo } from "./procedure";
 
-export function MobileProcedure({
+export default function MobileProcedure({
   procedureInfo,
 }: {
   procedureInfo: ProcedureInfo[];

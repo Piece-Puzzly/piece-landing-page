@@ -1,7 +1,11 @@
 import { cn } from "@/lib/utils";
 import { ProcedureInfo } from "./procedure";
 
-export function Indicator({ title, accent, icon: Icon }: ProcedureInfo) {
+export default function Indicator({
+  title,
+  accent,
+  icon: Icon,
+}: ProcedureInfo) {
   return (
     <div
       className={cn(
