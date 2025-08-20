@@ -1,4 +1,9 @@
-import Image from "next/image";
+import FaqIcon1 from "@/assets/faq-1.svg";
+import FaqIcon2 from "@/assets/faq-2.svg";
+import FaqIcon3 from "@/assets/faq-3.svg";
+import FaqIcon4 from "@/assets/faq-4.svg";
+import FaqIcon5 from "@/assets/faq-5.svg";
+import Section from "@/components/section";
 
 const faqInfo = [
   {
@@ -7,7 +12,7 @@ const faqInfo = [
       "피스는 AI 기반으로,  지역과 가치관이 마치 퍼즐 조각처럼 꼭 맞는 인연을 찾아 연결합니다.",
       "추후에 연령대 등 내가 원하는 만남 성사 기준을 직접 설정할 수 있도록 업데이트될 예정입니다.",
     ],
-    iconSrc: "/faq-1.svg",
+    icon: FaqIcon1,
   },
   {
     title: "지인을 만나거나 아웃팅될 위험은 없나요?",
@@ -17,7 +22,7 @@ const faqInfo = [
       "또한 캡처 방지 기술이 적용되어 있어, 개인정보 유출 위험 없이 안심하고 이용하실 수 있습니다.",
       "여러분의 안전한 커뮤니티 이용을 위해 최선을 다하겠습니다.",
     ],
-    iconSrc: "/faq-2.svg",
+    icon: FaqIcon2,
   },
   {
     title: "가입 심사는 어떻게 진행되나요?",
@@ -26,7 +31,7 @@ const faqInfo = [
       "얼굴이 잘 보이는 사진이 필수이며, 무성의한 소개글이나 선정적·부적절한 내용이 포함된 프로필은 반려됩니다.",
       "첫 심사에서 거절되더라도 프로필을 수정하여 재심사를 신청할 수 있습니다.",
     ],
-    iconSrc: "/faq-3.svg",
+    icon: FaqIcon3,
   },
   {
     title: "이용 요금은 얼마인가요?",
@@ -34,7 +39,7 @@ const faqInfo = [
       "매일 22시, 나에게 꼭 맞는 인연 1명이 무료로 매칭됩니다. ",
       "더 많은 인연을 만날 수 있는 유료 기능도 추후 업데이트될 예정이니, 많은 기대 부탁드립니다.",
     ],
-    iconSrc: "/faq-4.svg",
+    icon: FaqIcon4,
   },
   {
     title: "안전 관리는 어떻게 하고 있나요?",
@@ -43,39 +48,33 @@ const faqInfo = [
       "부적절한 이용이 발견된 사용자는 신속하게 경고 혹은 이용이 제한됩니다.",
       "여러분의 적극적인 신고 부탁드립니다.",
     ],
-    iconSrc: "/faq-5.svg",
+    icon: FaqIcon5,
   },
 ];
 
 export default function FaqSection() {
   return (
-    <div className="px-60 py-45 space-y-16 bg-white">
-      <div className="font-semibold text-5xl leading-16 text-[#484B4D]">
+    <Section bgClassName="bg-white" className="px-6 sm:px-10 md:px-12">
+      <div className="font-semibold text-[1.75rem] leading-10 lg:text-5xl lg:leading-16 text-[#484B4D]">
         자주 묻는 질문
       </div>
-      <div className="space-y-6">
-        {faqInfo.map(({ title, desc, iconSrc }, i) => (
+      <div className="space-y-4 lg:space-y-6">
+        {faqInfo.map(({ title, desc, icon: Icon }, i) => (
           <div
-            className="bg-[#F4F6FA] p-15 rounded-2xl grid grid-cols-3 gap-15 items-start"
+            className="bg-[#F4F6FA] p-10 lg:p-15 rounded-2xl flex flex-col gap-10 lg:grid lg:grid-cols-5 lg:gap-15 lg:items-start"
             key={i}
           >
-            <div className="flex items-center gap-3">
-              <Image
-                src={iconSrc}
-                width={32}
-                height={32}
-                className="size-8"
-                alt="icon"
-              />
-              <div className="font-bold text-[1.25rem] text-[#1B1A2A] leading-[150%] tracking-[-2%]">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-3 col-span-2">
+              <Icon className="size-8 shrink-0" />
+              <div className="font-bold text-base lg:text-[1.25rem] text-[#1B1A2A] leading-6 lg:leading-[150%] tracking-[-2%]">
                 {title}
               </div>
             </div>
-            <div className="col-span-2">
+            <div className="col-span-3">
               {desc.map((e, i) => (
                 <p
                   key={i}
-                  className="text-[#484B4D] font-medium text-base leading-[150%] tracking-[-2%]"
+                  className="text-[#484B4D] font-medium text-sm leading-5 lg:text-base lg:leading-[150%] tracking-[-2%]"
                 >
                   {e}
                 </p>
@@ -84,6 +83,6 @@ export default function FaqSection() {
           </div>
         ))}
       </div>
-    </div>
+    </Section>
   );
 }

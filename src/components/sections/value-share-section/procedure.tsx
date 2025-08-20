@@ -1,44 +1,50 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import Step0 from "@/assets/step-0.svg";
+import Step1 from "@/assets/step-1.svg";
+import Step2 from "@/assets/step-2.svg";
+import Step3 from "@/assets/step-3.svg";
+import Step4 from "@/assets/step-4.svg";
+import Step5 from "@/assets/step-5.svg";
+import { useMediaQuery } from "@/hooks/use-media-query";
 import { easeOut, motion } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import { Indicator } from "./indicator";
+import { MobileProcedure } from "./mobile-procedure";
 
-const procedureInfo = [
-  {
-    title: "홈",
-    accent: false,
-    src: "/step-0.svg",
-    phoneSrc: "/step-0-phone.png",
-  },
+export type ProcedureInfo = {
+  title: string;
+  accent: boolean;
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  phoneSrc: string;
+};
+
+const procedureInfo: ProcedureInfo[] = [
+  { title: "홈", accent: false, icon: Step0, phoneSrc: "/step-0-phone.png" },
   {
     title: "기본 정보",
     accent: false,
-    src: "/step-1.svg",
+    icon: Step1,
     phoneSrc: "/step-1-phone.png",
   },
   {
     title: "가치관 Pick",
     accent: true,
-    src: "/step-2.svg",
+    icon: Step2,
     phoneSrc: "/step-2-phone.png",
   },
   {
     title: "가치관 Talk",
     accent: true,
-    src: "/step-3.svg",
+    icon: Step3,
     phoneSrc: "/step-3-phone.png",
   },
-  {
-    title: "사진",
-    accent: false,
-    src: "/step-4.svg",
-    phoneSrc: "/step-4-phone.png",
-  },
+  { title: "사진", accent: false, icon: Step4, phoneSrc: "/step-4-phone.png" },
   {
     title: "연락처",
     accent: false,
-    src: "/step-5.svg",
+    icon: Step5,
     phoneSrc: "/step-5-phone.png",
   },
 ];
@@ -46,7 +52,7 @@ const procedureInfo = [
 export default function Procedure() {
   const containerVariants = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.15 } }, // 내부 요소 순차 등장
+    show: { transition: { staggerChildren: 0.15 } },
   };
 
   const itemVariants = {
@@ -54,7 +60,25 @@ export default function Procedure() {
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeOut } },
   };
 
-  return (
+  const isMobile = useMediaQuery(1024);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // 모바일일 때 wheel → 가로 스크롤 변환
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const onWheel = (e: WheelEvent) => {
+      if (e.deltaY === 0) return;
+      e.preventDefault();
+      el.scrollLeft += e.deltaY; // 세로 → 가로 스크롤 변환
+    };
+
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, [isMobile]);
+
+  return !isMobile ? (
     <motion.div
       className="space-y-20"
       variants={containerVariants}
@@ -67,25 +91,8 @@ export default function Procedure() {
         className="flex items-center gap-15 justify-center"
         variants={itemVariants}
       >
-        {procedureInfo.map(({ title, src, accent }, i) => (
-          <div
-            className={cn(
-              "flex flex-col gap-3.5 w-[6.3rem] items-center leading-8 text-[#6C7073] text-2xl",
-              { "text-primary": accent }
-            )}
-            key={title}
-          >
-            <Image
-              src={src}
-              width={52}
-              height={52}
-              className="size-13"
-              alt={`${i}`}
-            />
-            <div className="font-semibold text-2xl whitespace-nowrap">
-              {title}
-            </div>
-          </div>
+        {procedureInfo.map((e, i) => (
+          <Indicator key={i} {...e} />
         ))}
       </motion.div>
 
@@ -99,11 +106,13 @@ export default function Procedure() {
               src={phoneSrc}
               key={phoneSrc}
               alt={`아이폰 이미지 ${i}`}
-              className="w-[21.25rem] h-auto"
+              className="w-[21.25rem] h-auto pointer-events-none"
             />
           ))}
         </div>
       </motion.div>
     </motion.div>
+  ) : (
+    <MobileProcedure procedureInfo={procedureInfo} />
   );
 }

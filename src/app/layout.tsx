@@ -1,3 +1,4 @@
+import Fab from "@/components/fab";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -12,8 +13,8 @@ const pretendard = localFont({
 // });
 
 export const metadata: Metadata = {
-  title: "Piece Admin",
-  description: "피스 어드민 웹페이지",
+  title: "개발 중",
+  description: "...",
   icons: {
     icon: "/favicon.png",
   },
@@ -24,11 +25,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className="text-[16px]">
+    <html lang="ko" className="text-[16px] lg:text-[14px] break-keep">
       <body
-        className={`${pretendard.variable} ${pretendard.className} antialiased`}
+        className={`${pretendard.variable} ${pretendard.className} antialiased relative`}
       >
         {children}
+        <Fab />
       </body>
     </html>
   );

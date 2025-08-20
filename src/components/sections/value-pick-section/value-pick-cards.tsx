@@ -39,7 +39,7 @@ export default function ValuePickCards() {
 
   return (
     <motion.div
-      className="z-10 flex gap-10 lg:gap-15 w-fit"
+      className="z-10 flex gap-10 lg:gap-15 w-fit relative"
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
@@ -58,7 +58,7 @@ export default function ValuePickCards() {
               src={src}
               width={400}
               height={254.16}
-              className="w-80 lg:w-102 h-auto"
+              className="w-80 lg:w-102 h-auto pointer-events-none"
               alt={alt}
             />
           </motion.div>

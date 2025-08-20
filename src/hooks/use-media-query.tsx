@@ -13,7 +13,7 @@ export function useMediaQuery(breakPoint: number) {
     mql.addEventListener("change", onChange);
     setIsMobile(window.innerWidth < breakPoint);
     return () => mql.removeEventListener("change", onChange);
-  }, []);
+  }, [breakPoint]);
 
   return !!isMobile;
 }

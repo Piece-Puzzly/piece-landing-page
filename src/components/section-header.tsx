@@ -7,7 +7,10 @@ export default function SectionHeader({
 }: React.ComponentProps<"div">) {
   return (
     <div
-      className={cn(className, "w-full space-y-5 lg:space-y-7")}
+      className={cn(
+        className,
+        "w-full space-y-5 lg:space-y-7 px-6 sm:px-10 md:px-12"
+      )}
       {...props}
     />
   );

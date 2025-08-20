@@ -7,13 +7,13 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <div className="h-dvh bg-piece-gradient flex justify-center items-center relative">
-      <div className="absolute bottom-0 z-0">
+      <div className="absolute bottom-0 z-0 w-full flex justify-center">
         <Image
           src={"/bg-logo.svg"}
           width={1071}
           height={400}
           alt=""
-          className="w-[66.938rem] h-auto"
+          className="w-105 md:w-3/5 h-auto pointer-events-none"
         />
       </div>
       <div className="absolute bottom-10 z-10">
