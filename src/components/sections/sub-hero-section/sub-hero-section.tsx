@@ -41,7 +41,7 @@ export default function SubHeroSection() {
       className="py-20 lg:py-45 flex items-center justify-center bg-white px-6 lg:px-10"
       id="sub-hero-section"
     >
-      <div className="text-[1.25rem] leading-6 lg:text-[2rem] lg:leading-11 font-medium text-center">
+      <div className="text-[1.25rem] leading-6 lg:text-[2rem] lg:leading-11 font-semibold text-center">
         {isMobile ? textInfo.mobile : textInfo.pc}
       </div>
     </div>
