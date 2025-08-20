@@ -15,13 +15,18 @@ export default function AppDownloadButton() {
           앱 다운로드
         </Button>
       </DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle className="text-primary">Download</DialogTitle>
-          <DialogDescription className="absolute-hidden">
-            다운로드
-          </DialogDescription>
+      <DialogContent className="rounded-5 p-15 gap-7 flex flex-col items-center">
+        <DialogHeader className="absolute hidden">
+          <DialogTitle className="text-primary">다운로드</DialogTitle>
+          <DialogDescription>다운로드</DialogDescription>
         </DialogHeader>
+        <div className="text-[1.75rem] leading-10 text-primary font-semibold">
+          Download
+        </div>
+        <div className="aspect-square w-45 bg-primary"></div>
+        <div className="text-base text-6 font-medium text-primary text-center">
+          <p>QR 코드를 스캔하여</p> <p>앱을 다운로드 하세요!</p>
+        </div>
       </DialogContent>
     </Dialog>
   );
