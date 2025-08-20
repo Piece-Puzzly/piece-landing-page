@@ -1,4 +1,3 @@
-import Fab from "@/components/fab";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -27,11 +26,9 @@ export default function RootLayout({
   return (
     <html lang="ko" className="text-[16px] lg:text-[14px] break-keep">
       <body
-        className={`${pretendard.variable} ${pretendard.className} antialiased relative`}
+        className={`${pretendard.variable} ${pretendard.className} antialiased `}
       >
         {children}
-        
-        <Fab />
       </body>
     </html>
   );
