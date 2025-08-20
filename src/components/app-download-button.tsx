@@ -15,7 +15,7 @@ export default function AppDownloadButton() {
           앱 다운로드
         </Button>
       </DialogTrigger>
-      <DialogContent className="rounded-5 p-15 gap-7 flex flex-col items-center">
+      <DialogContent className="rounded-5 p-15 gap-7 flex flex-col items-center w-fit">
         <DialogHeader className="absolute hidden">
           <DialogTitle className="text-primary">다운로드</DialogTitle>
           <DialogDescription>다운로드</DialogDescription>

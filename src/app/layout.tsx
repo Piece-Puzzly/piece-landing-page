@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className="text-[16px] lg:text-[14px] break-keep">
+    <html lang="ko" className="text-[16px] lg:text-[12px] break-keep">
       <body
         className={`${pretendard.variable} ${pretendard.className} antialiased `}
       >

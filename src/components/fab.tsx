@@ -5,7 +5,7 @@ import { Toggle } from "./ui/toggle";
 
 const scaleMap = [
   { fontSize: "16", title: "원본" },
-  { fontSize: "14", title: "축소" },
+  { fontSize: "12", title: "축소" },
 ];
 export default function Fab() {
   const [scale, setScale] = useState<number>(0); // 기본 배율 1 (100%)
