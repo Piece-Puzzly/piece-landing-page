@@ -39,9 +39,7 @@ export default function ScrollContainer() {
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    // --- ⬇️ 이 부분이 수정되었습니다 ⬇️ ---
-    // 컴포넌트가 화면에 보이기 시작할 때부터 사라질 때까지 애니메이션을 진행
-    offset: ["end end", "start start"],
+    offset: ["80% end", "start start"],
   });
 
   const x = useTransform(scrollYProgress, [0, 1], [0, -horizontalOffset]);
@@ -65,7 +63,7 @@ export default function ScrollContainer() {
                 delay: i * 0.2,
                 ease: "easeOut",
               }}
-              viewport={{ once: true, amount: 0.5 }} // 👈 여기서 50% 이상 보일 때 실행
+              viewport={{ once: true, amount: 0.25 }} // 👈 여기서 50% 이상 보일 때 실행
               key={e.id}
               className="h-full relative flex-shrink-0 flex items-start "
             >
