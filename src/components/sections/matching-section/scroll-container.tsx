@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+
 const imgInfo = [
   {
     id: 1,
@@ -15,6 +16,29 @@ const imgInfo = [
     className: "pt-0",
   },
 ];
+
+// Add 'as const' for strict type inference
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+} as const;
+
+// Add 'as const' here as well to fix the TypeScript error
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+} as const;
 
 export default function ScrollContainer() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -43,6 +67,7 @@ export default function ScrollContainer() {
   });
 
   const x = useTransform(scrollYProgress, [0, 1], [0, -horizontalOffset]);
+
   return (
     <div
       ref={targetRef}
@@ -53,19 +78,18 @@ export default function ScrollContainer() {
         style={{ x }}
         className="flex items-center shrink-0 "
       >
-        <div className="w-fit px-6 sm:px-10 md:px-12  lg:gap-15 gap-10 ml-auto flex">
-          {imgInfo.map((e, i) => (
+        <motion.div
+          className="w-fit px-6 sm:px-10 md:px-12 lg:gap-15 gap-10 ml-auto flex"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          {imgInfo.map((e) => (
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: i * 0.2,
-                ease: "easeOut",
-              }}
-              viewport={{ once: true, amount: 0.25 }} // 👈 여기서 50% 이상 보일 때 실행
               key={e.id}
-              className="h-full relative flex-shrink-0 flex items-start "
+              className="h-full relative flex-shrink-0 flex items-start"
+              variants={itemVariants}
             >
               <Image
                 src={e.src}
@@ -79,7 +103,7 @@ export default function ScrollContainer() {
               />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   );
