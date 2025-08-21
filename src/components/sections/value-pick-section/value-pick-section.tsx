@@ -49,7 +49,7 @@ export default function ValuePickSection() {
   // 3. Hook to track scroll progress
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["end end", "start 10%"],
+    offset: ["80% end", "start start"],
   });
 
   // 4. Hook to map vertical scroll to horizontal movement
