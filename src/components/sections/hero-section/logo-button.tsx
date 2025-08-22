@@ -14,11 +14,7 @@ export default function LogoButton() {
   }, []);
 
   return (
-    <a
-      href={origin}
-      rel="noopener noreferrer"
-      className="text-[#D0ABFD] hover:text-[#F6EFFF] transition-colors"
-    >
+    <a href={origin} rel="noopener noreferrer" className=" transition-colors">
       <Logo className="h-8 max-h-8" />
     </a>
   );

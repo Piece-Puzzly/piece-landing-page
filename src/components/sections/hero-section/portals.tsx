@@ -32,7 +32,7 @@ export default function Portals() {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="size-8 -m-1 flex items-center justify-center text-[#D0ABFD] hover:text-[#F6EFFF] transition-colors"
+          className="size-8 -m-1 flex items-center justify-center  transition-colors"
         >
           <Icon className="size-6" />
         </a>
