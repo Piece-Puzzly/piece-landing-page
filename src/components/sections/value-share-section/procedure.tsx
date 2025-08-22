@@ -9,7 +9,6 @@ import Step5 from "@/assets/step-5.svg";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { easeOut, motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
 import Indicator from "./indicator";
 import MobileProcedure from "./mobile-procedure";
 
@@ -61,22 +60,6 @@ export default function Procedure() {
   };
 
   const isMobile = useMediaQuery(1024);
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  // 모바일일 때 wheel → 가로 스크롤 변환
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-
-    const onWheel = (e: WheelEvent) => {
-      if (e.deltaY === 0) return;
-      e.preventDefault();
-      el.scrollLeft += e.deltaY; // 세로 → 가로 스크롤 변환
-    };
-
-    el.addEventListener("wheel", onWheel, { passive: false });
-    return () => el.removeEventListener("wheel", onWheel);
-  }, [isMobile]);
 
   return !isMobile ? (
     <motion.div

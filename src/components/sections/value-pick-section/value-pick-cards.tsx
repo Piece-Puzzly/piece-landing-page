@@ -9,7 +9,7 @@ export default function ValuePickCards() {
     {
       src: "/value-pick-1.png",
       alt: "가치관 PICK 1",
-      className: "pt-10 lg:pt-15",
+      className: "pt-8 lg:pt-15",
     },
     {
       src: "/value-pick-2.png",
@@ -56,9 +56,9 @@ export default function ValuePickCards() {
           >
             <Image
               src={src}
-              width={400}
-              height={254.16}
-              className="w-80 lg:w-102 h-auto pointer-events-none"
+              width={354.61}
+              height={225.87}
+              className="w-[22.163rem] h-auto pointer-events-none"
               alt={alt}
             />
           </motion.div>

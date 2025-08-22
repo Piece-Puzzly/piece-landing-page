@@ -17,13 +17,13 @@ export default function ValueTalkSection() {
     <div
       className={cn(
         "w-full flex relative",
-        "bg-[radial-gradient(ellipse_62.5rem_62.5rem_at_50%_50%,_#D0ABFD80_0%,_#D0ABFD20_40%,_#D0ABFD00_100%)]",
+        "bg-[radial-gradient(ellipse_62.5rem_62.5rem_at_50%_50%,_#D0ABFD80_0%,_#D0ABFD20_20%,_#D0ABFD00_80%)]",
         "lg:bg-[radial-gradient(ellipse_100%_50%_at_50%_100%,_#D0ABFD80_0%,_#D0ABFD20_40%,_#D0ABFD00_100%)]"
       )}
     >
       <div
         className={cn(
-          "max-w-screen-2xl w-full mx-auto lg:py-45 py-20 space-y-12.5 lg:space-y-20 relative z-10"
+          "max-w-screen-2xl w-full mx-auto lg:pb-45 pb-20 space-y-12.5 lg:space-y-20 relative z-10"
         )}
       >
         <SectionHeader>

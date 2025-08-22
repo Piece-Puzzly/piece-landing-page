@@ -1,15 +1,11 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-
 import Section from "@/components/section";
 import SectionDescription from "@/components/section-description";
 import SectionHeader from "@/components/section-header";
 import SectionTitle from "@/components/section-title";
 import { useMediaQuery } from "@/hooks/use-media-query";
-import ValuePickCards from "./value-pick-cards";
-import ValuePickKeywords from "./value-pick-keywords";
+import ScrollContainer from "./scroll-container";
 
 const textInfo = {
   pc: [
@@ -25,38 +21,10 @@ const textInfo = {
 
 export default function ValuePickSection() {
   // 1. Framer Motion hooks and state for the animation
-  const targetRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [horizontalOffset, setHorizontalOffset] = useState(0);
 
-  // 2. Effect to measure content width and handle resizing
-  useEffect(() => {
-    const contentEl = contentRef.current;
-    const targetEl = targetRef.current;
-    if (!contentEl || !targetEl) return;
-
-    const resizeObserver = new ResizeObserver(() => {
-      const offset = contentEl.scrollWidth - targetEl.clientWidth;
-      setHorizontalOffset(offset);
-    });
-
-    resizeObserver.observe(contentEl);
-    resizeObserver.observe(targetEl);
-
-    return () => resizeObserver.disconnect();
-  }, []);
-
-  // 3. Hook to track scroll progress
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["80% end", "start start"],
-  });
-
-  // 4. Hook to map vertical scroll to horizontal movement
-  const x = useTransform(scrollYProgress, [0, 1], [0, -horizontalOffset]);
   const isTablet = useMediaQuery(1024);
   return (
-    <Section>
+    <Section className="pb-0 lg:pb-0">
       <SectionHeader>
         <SectionTitle>
           <p className="flex items-center gap-4">
@@ -74,23 +42,7 @@ export default function ValuePickSection() {
         </SectionDescription>
       </SectionHeader>
 
-      {/* --- ScrollArea is replaced with the structure below --- */}
-      <div ref={targetRef} className="relative">
-        <div className="flex items-center overflow-hidden">
-          <motion.div
-            ref={contentRef}
-            style={{ x }}
-            // A flex container is used to ensure the content inside aligns properly
-            className="flex items-center shrink-0 min-w-full"
-          >
-            {/* This is the original content from inside the ScrollArea */}
-            <div className="px-6 md:px-10 lg:px-12 relative h-90 lg:h-[36.9375rem] w-fit shrink-0 mx-auto">
-              <ValuePickKeywords />
-              <ValuePickCards />
-            </div>
-          </motion.div>
-        </div>
-      </div>
+      <ScrollContainer />
     </Section>
   );
 }

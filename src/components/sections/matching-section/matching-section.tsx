@@ -1,3 +1,5 @@
+"use client";
+
 import Section from "@/components/section";
 import SectionDescription from "@/components/section-description";
 import SectionHeader from "@/components/section-header";
@@ -20,7 +22,6 @@ export default function MatchingSection() {
           <p>내 운명의 상대를 찾을지도 몰라요.</p>
         </SectionDescription>
       </SectionHeader>
-
       <ScrollContainer />
     </Section>
   );

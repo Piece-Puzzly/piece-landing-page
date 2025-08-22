@@ -9,7 +9,7 @@ export default function SectionHeader({
     <div
       className={cn(
         className,
-        "w-full space-y-5 lg:space-y-7 px-6 sm:px-10 md:px-12"
+        "w-full space-y-4 lg:space-y-6 px-6 sm:px-10 md:px-12"
       )}
       {...props}
     />

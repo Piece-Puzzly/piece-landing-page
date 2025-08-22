@@ -3,7 +3,7 @@ export default function SectionDescription({
 }: React.ComponentProps<"div">) {
   return (
     <div
-      className="font-medium text-lg leading-5.5 lg:text-[1.75rem] lg:leading-10 text-muted-foreground"
+      className="font-medium text-base leading-6 lg:text-[1.25rem] lg:leading-8 text-muted-foreground"
       {...props}
     />
   );

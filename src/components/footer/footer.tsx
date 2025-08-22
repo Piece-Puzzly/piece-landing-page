@@ -7,8 +7,16 @@ import { Fragment } from "react";
 import { Separator } from "../ui/separator";
 
 const actionInfo = [
-  { title: "카카오 채널톡", href: "", icon: ChannelTalkIcon },
-  { title: "인스타그램", href: "", icon: InstagramIcon },
+  {
+    title: "카카오 채널톡",
+    href: "https://kd0n5.channel.io/home",
+    icon: ChannelTalkIcon,
+  },
+  {
+    title: "인스타그램",
+    href: "https://www.instagram.com/piece_puzzly?igsh=MXNwMmMwanFkOGkyNQ%3D%3D",
+    icon: InstagramIcon,
+  },
 ];
 
 const textInfo = [
@@ -25,11 +33,11 @@ export default function Footer() {
   return (
     <footer className="p-10 text-[#6C7073] border-t border-[#CBD1D9]">
       <div className="space-y-8 flex-1">
-        <div className="flex justify-between">
-          <div className="space-y-3 text-3.5 leading-5 flex-1">
+        <div className="flex justify-between text-xs leading-4">
+          <div className="space-y-3  flex-1">
             <div>
               <a
-                href=""
+                href="https://brassy-client-c0a.notion.site/16a2f1c4b966800f923cd499d8e07a97"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold"
@@ -39,12 +47,12 @@ export default function Footer() {
             </div>
             <div>
               <a
-                href=""
+                href="https://brassy-client-c0a.notion.site/16a2f1c4b96680f8b622e5925a394edf?pvs=4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold"
               >
-                개인정보 처리방침
+                개인정보처리방침
               </a>
             </div>
           </div>
@@ -63,12 +71,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="space-y-3 font-medium">
+        <div className="space-y-3 font-medium ">
           {!isTablet ? (
             <div className="flex gap-4 flex-wrap items-center">
               {textInfo.map((text, index) => (
                 <Fragment key={index}>
-                  <div>{text}</div>
+                  <div className="text-xs leading-4">{text}</div>
                   {index < textInfo.length - 1 && (
                     <Separator
                       orientation="vertical"
@@ -79,13 +87,15 @@ export default function Footer() {
               ))}
             </div>
           ) : (
-            <div className="space-y-2 mb-8">
+            <div className="space-y-2 mb-8 text-xs leading-4">
               {textInfo.map((text, index) => (
                 <div key={index}>{text}</div>
               ))}
             </div>
           )}
-          <div>Copyright © 2025 Piece Inc. All rights reserved.</div>
+          <div className="text-xs leading-4">
+            Copyright © 2025 Piece Inc. All rights reserved.
+          </div>
         </div>
       </div>
     </footer>

@@ -16,7 +16,7 @@ export default function Indicator({
     >
       <Icon className="size-10 lg:size-13" />
 
-      <div className="font-semibold text-base lg:text-2xl whitespace-nowrap">
+      <div className="font-semibold text-base leading-6 lg:text-xl lg:leading-8 whitespace-nowrap">
         {title}
       </div>
     </div>

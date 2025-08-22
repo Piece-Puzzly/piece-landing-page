@@ -6,7 +6,10 @@ import Procedure from "./procedure";
 
 export default function ValueShareSection() {
   return (
-    <Section bgClassName=" value-share-gradient">
+    <Section
+      bgClassName="value-share-gradient "
+      className="py-0 lg:py-0 lg:pt-60 pt-30"
+    >
       <SectionHeader>
         <SectionTitle>
           <p>사진보다 마음이 먼저,</p>

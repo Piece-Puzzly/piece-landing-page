@@ -7,6 +7,7 @@ import FooterSection from "@/components/sections/footer-section/footer-section";
 import Header from "@/components/sections/hero-section/header";
 import HeroSection from "@/components/sections/hero-section/hero-section";
 import MatchingSection from "@/components/sections/matching-section/matching-section";
+import SecuritySection from "@/components/sections/security-section/security-section";
 import SubHeroSection from "@/components/sections/sub-hero-section/sub-hero-section";
 import ValuePickSection from "@/components/sections/value-pick-section/value-pick-section";
 import ValueShareSection from "@/components/sections/value-share-section/value-share-section";
@@ -22,6 +23,7 @@ export default function Page() {
       <ValueTalkSection />
       <ValuePickSection />
       <ValueShareSection />
+      <SecuritySection />
       <FaqSection />
       <FooterSection />
       <Footer />

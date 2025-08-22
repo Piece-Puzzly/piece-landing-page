@@ -6,7 +6,7 @@ import { easeOut, motion } from "framer-motion";
 const keyWordsDataLg = [
   ["만남 빈도,", "음주,", "연락 빈도,", "연락 방식,", "데이트,"],
   ["장거리 연애 가능 여부,", "SNS,", "갈등 해결 방식,", "일 중요도,"],
-  ["연락 빈도,", "연락 방식,", "커밍아웃 범위,"],
+  ["음주", "연락 빈도,", "연락 방식,", "커밍아웃 범위,"],
 ];
 const keyWordsDataSm = [
   [
@@ -17,9 +17,14 @@ const keyWordsDataSm = [
     "데이트,",
     "장거리 연애 가능 여부,",
     "SNS,",
-    "갈등 해결 방식,",
   ],
-  ["일 중요도,", "연락 빈도,", "연락 방식,", "커밍아웃 범위,"],
+  [
+    "갈등 해결 방식,",
+    "일 중요도,",
+    "연락 빈도,",
+    "연락 방식,",
+    "커밍아웃 범위,",
+  ],
 ];
 const containerVariants = {
   hidden: {},
@@ -41,7 +46,7 @@ export default function ValuePickKeywords() {
 
   return (
     <motion.div
-      className="flex flex-col gap-3 absolute left-1/2 -translate-x-1/2 bottom-0 leading-10 text-[1.75rem] lg:text-5xl lg:leading-16 text-[#6C7073] font-semibold [mask-image:linear-gradient(to_bottom,black,transparent)] [mask-repeat:no-repeat] [mask-size:100%_100%] z-0"
+      className="flex flex-col gap-3 absolute left-1/2 -translate-x-1/2 bottom-0 leading-8 text-2xl lg:text-4xl lg:leading-12 text-[#6C7073] font-semibold [mask-image:linear-gradient(to_bottom,black,transparent)] [mask-repeat:no-repeat] [mask-size:100%_100%] z-0"
       variants={containerVariants}
       initial="hidden"
       whileInView="show"

@@ -12,8 +12,9 @@ const pretendard = localFont({
 // });
 
 export const metadata: Metadata = {
-  title: "개발 중",
-  description: "...",
+  title: "피스(Piece) | 가치관 기반 게이 소개팅 앱 ",
+  description:
+    "누구나 퍼즐 조각처럼 꼭 맞는 인연이 있습니다. 피스는 마음이 통하는 상대를 찾아드리는 게이 소개팅 앱입니다.",
   icons: {
     icon: "/favicon.png",
   },

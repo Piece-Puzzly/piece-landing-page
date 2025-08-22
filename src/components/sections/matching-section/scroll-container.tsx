@@ -8,7 +8,7 @@ const imgInfo = [
   {
     id: 1,
     src: "/matching-1.png",
-    className: "pt-40",
+    className: "pt-0 md:pt-40",
   },
   {
     id: 2,
@@ -63,7 +63,7 @@ export default function ScrollContainer() {
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["80% end", "start start"],
+    offset: ["90% end", "start 10%"],
   });
 
   const x = useTransform(scrollYProgress, [0, 1], [0, -horizontalOffset]);

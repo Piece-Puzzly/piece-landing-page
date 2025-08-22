@@ -4,6 +4,7 @@ import FaqIcon3 from "@/assets/faq-3.svg";
 import FaqIcon4 from "@/assets/faq-4.svg";
 import FaqIcon5 from "@/assets/faq-5.svg";
 import Section from "@/components/section";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 const faqInfo = [
   {
@@ -53,32 +54,42 @@ const faqInfo = [
 ];
 
 export default function FaqSection() {
+  const isTablet = useMediaQuery(1024);
   return (
     <Section bgClassName="bg-white" className="px-6 sm:px-10 md:px-12">
-      <div className="font-semibold text-[1.75rem] leading-10 lg:text-5xl lg:leading-16 text-[#484B4D]">
+      <div className="font-semibold text-2xl leading-8 lg:text-4xl lg:leading-12 text-[#484B4D]">
         자주 묻는 질문
       </div>
       <div className="space-y-4 lg:space-y-6">
         {faqInfo.map(({ title, desc, icon: Icon }, i) => (
           <div
-            className="bg-[#F4F6FA] p-10 lg:p-15 rounded-2xl flex flex-col gap-10 lg:grid lg:grid-cols-5 lg:gap-15 lg:items-start"
+            className="bg-[#F4F6FA] p-10 lg:p-15 rounded-2xl flex flex-col gap-6 lg:flex lg:flex-row lg:gap-25 lg:items-start"
             key={i}
           >
-            <div className="flex flex-col lg:flex-row lg:items-center gap-3 col-span-2">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-4 lg:w-126 shrink-0">
               <Icon className="size-8 shrink-0" />
-              <div className="font-bold text-base lg:text-[1.25rem] text-[#1B1A2A] leading-6 lg:leading-[150%] tracking-[-2%]">
+              <div className="font-semibold text-lg lg:text-[1.75rem] text-[#1B1A2A] leading-5.5 lg:leading-10 tracking-[-2%]">
                 {title}
               </div>
             </div>
-            <div className="col-span-3">
-              {desc.map((e, i) => (
+            <div className="break-all lg:break-keep">
+              {isTablet ? (
                 <p
                   key={i}
                   className="text-[#484B4D] font-medium text-sm leading-5 lg:text-base lg:leading-[150%] tracking-[-2%]"
                 >
-                  {e}
+                  {desc.join(" ")}
                 </p>
-              ))}
+              ) : (
+                desc.map((e, i) => (
+                  <p
+                    key={i}
+                    className="text-[#484B4D] font-medium text-sm leading-5 lg:text-base lg:leading-[150%] tracking-[-2%]"
+                  >
+                    {e}
+                  </p>
+                ))
+              )}
             </div>
           </div>
         ))}
