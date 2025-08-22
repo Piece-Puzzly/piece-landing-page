@@ -1,6 +1,5 @@
 "use client";
 
-import { Fab } from "@/components";
 import Footer from "@/components/footer/footer";
 import FaqSection from "@/components/sections/faq-section/faq-section";
 import FooterSection from "@/components/sections/footer-section/footer-section";
@@ -27,7 +26,6 @@ export default function Page() {
       <FaqSection />
       <FooterSection />
       <Footer />
-      <Fab />
     </div>
   );
 }
