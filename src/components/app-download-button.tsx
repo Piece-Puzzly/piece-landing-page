@@ -50,7 +50,7 @@ export default function AppDownloadButton() {
           <div className="text-[1.75rem] leading-10 text-primary font-semibold">
             Download
           </div>
-          <DownloadQr className="w-45 h-45 mb-5" />
+          <DownloadQr className="size-45" />
           <div className="text-base text-6 font-medium text-primary text-center">
             <p>QR 코드를 스캔하여</p> <p>앱을 다운로드 하세요!</p>
           </div>
