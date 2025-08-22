@@ -17,8 +17,8 @@ export default function AppDownloadButton() {
     const userAgent = navigator.userAgent.toLowerCase();
 
     // 🔗 여기에 실제 링크를 입력하세요
-    const androidUrl = "link1"; // 예: "https://play.google.com/store/apps/details?id=..."
-    const iosUrl = "link2"; // 예: "https://apps.apple.com/app/id..."
+    const androidUrl = "/redirect-page"; // 예: "https://play.google.com/store/apps/details?id=..."
+    const iosUrl = "/redirect-page"; // 예: "https://apps.apple.com/app/id..."
 
     if (/android/.test(userAgent)) {
       window.location.href = androidUrl;
