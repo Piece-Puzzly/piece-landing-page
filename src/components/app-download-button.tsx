@@ -1,3 +1,4 @@
+import DownloadQr from "@/assets/download-qr.svg";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -49,9 +50,7 @@ export default function AppDownloadButton() {
           <div className="text-[1.75rem] leading-10 text-primary font-semibold">
             Download
           </div>
-          <div className="aspect-square w-45 bg-primary">
-            {/* 여기에 QR 코드 이미지를 넣으세요 */}
-          </div>
+          <DownloadQr className="w-45 h-45 mb-5" />
           <div className="text-base text-6 font-medium text-primary text-center">
             <p>QR 코드를 스캔하여</p> <p>앱을 다운로드 하세요!</p>
           </div>
