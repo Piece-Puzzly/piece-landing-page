@@ -5,7 +5,6 @@ import SectionDescription from "@/components/section-description";
 import SectionHeader from "@/components/section-header";
 import SectionTitle from "@/components/section-title";
 import { useMediaQuery } from "@/hooks/use-media-query";
-import { useIsMobile } from "@/hooks/use-mobile";
 import ScrollContainer from "./scroll-container";
 
 const textInfo = {
@@ -24,7 +23,7 @@ export default function ValuePickSection() {
   // 1. Framer Motion hooks and state for the animation
 
   const isTablet = useMediaQuery(1024);
-  const isMobile = useIsMobile();
+
   return (
     <Section className="pb-0 lg:pb-0">
       <SectionHeader>

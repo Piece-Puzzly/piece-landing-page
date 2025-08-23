@@ -73,7 +73,7 @@ export default function ScrollContainerScrollPinnning() {
   return (
     // 📌 STEP 1: 스크롤 피닝의 지속 시간을 결정하는 외부 컨테이너입니다.
     // 높이가 길수록 사용자가 더 오래 스크롤해야 애니메이션이 완료됩니다.
-    <section ref={targetRef} className="relative h-[200vh]">
+    <section ref={targetRef} className="relative h-[120vh]">
       {/* 📌 STEP 2: 화면에 고정될 컨테이너입니다. `sticky top-0` 속성이 핵심입니다. */}
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         {/* 📌 STEP 3: 실제로 가로로 움직일 콘텐츠입니다. */}
