@@ -4,9 +4,12 @@ import Section from "@/components/section";
 import SectionDescription from "@/components/section-description";
 import SectionHeader from "@/components/section-header";
 import SectionTitle from "@/components/section-title";
+import { useIsMobile } from "@/hooks/use-mobile";
 import ScrollContainer from "./scroll-container";
+import ScrollContainerScrollPinnning from "./scroll-container-scroll-pinning";
 
 export default function MatchingSection() {
+  const isMobile = useIsMobile();
   return (
     <Section className="space-y-12.5 md:space-y-0 lg:space-y-0">
       <SectionHeader>
@@ -22,7 +25,7 @@ export default function MatchingSection() {
           <p>내 운명의 상대를 찾을지도 몰라요.</p>
         </SectionDescription>
       </SectionHeader>
-      <ScrollContainer />
+      {isMobile ? <ScrollContainerScrollPinnning /> : <ScrollContainer />}
     </Section>
   );
 }
