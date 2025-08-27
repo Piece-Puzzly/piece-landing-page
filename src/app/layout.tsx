@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   },
   other: {
     "naver-site-verification": "7172e194b4bca7e6c7b4a271f632c9809252e1f8",
+    "apple-itunes-app": "app-id=6742348014, app-argument=https://puzzly.site",
   },
 };
 export default function RootLayout({
