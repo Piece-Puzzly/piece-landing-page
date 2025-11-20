@@ -23,7 +23,7 @@ const textInfo = [
   "퍼즐리",
   "서울특별시 서초구 방배동 870-32, 501",
   "대표이사: 양세빈",
-  "puzzlyofficial@gmail.com",
+  "puzzlyofficial@puzzly.site",
   "사업자번호: 174-06-03144",
   "통신판매업신고번호: 2025-서울서초-0842",
 ];
