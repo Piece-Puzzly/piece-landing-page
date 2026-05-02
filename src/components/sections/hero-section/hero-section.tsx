@@ -39,7 +39,7 @@ export default function HeroSection() {
           <p>AI가 매일 밤 10시에 데려와요</p>
         </div>
         <div className="text-base leading-6 lg:text-xl lg:leading-8 font-medium mb-20">
-          마음이 통하는 이쪽 사람을 찾아드려요: 피스(Piece)
+          가치관 기반 게이 소개팅: 피스(Piece)
         </div>
         <AppDownloadButton />
       </div>
