@@ -35,11 +35,11 @@ export default function HeroSection() {
 
       <div className="text-center text-white font-semibold relative z-10">
         <div className="text-[1.75rem] leading-10 lg:text-[2.5rem] lg:leading-14 mb-9">
-          <p>가치관 기반의 성숙한 만남을</p>
-          <p>지향하는 이반 소개팅 서비스</p>
+          <p>진짜 가치관이 닮은 인연,</p>
+          <p>AI가 매일 밤 10시에 데려와요</p>
         </div>
         <div className="text-base leading-6 lg:text-xl lg:leading-8 font-medium mb-20">
-          가치관 기반 게이 소개팅: 피스(Piece)
+          마음이 통하는 이쪽 사람을 찾아드려요: 피스(Piece)
         </div>
         <AppDownloadButton />
       </div>
