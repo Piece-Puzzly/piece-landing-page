@@ -1,6 +1,22 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // www → 비-www 301 리다이렉트 (SEO 점수 분산 방지)
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.puzzly.site",
+          },
+        ],
+        destination: "https://puzzly.site/:path*",
+        statusCode: 301,
+      },
+    ];
+  },
   // TurboPack 설정
   experimental: {
     turbo: {
