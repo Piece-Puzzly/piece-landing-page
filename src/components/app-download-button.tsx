@@ -1,3 +1,5 @@
+"use client";
+
 import DownloadQr from "@/assets/download-qr.svg";
 import { Button } from "@/components/ui/button";
 import {

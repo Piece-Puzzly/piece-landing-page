@@ -13,9 +13,56 @@ const pretendard = localFont({
 // });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://puzzly.site"),
   title: "피스(Piece) | 가치관 기반 게이 소개팅 앱 ",
   description:
     "누구나 퍼즐 조각처럼 꼭 맞는 인연이 있습니다. 피스는 마음이 통하는 상대를 찾아드리는 게이 소개팅 앱입니다.",
+  keywords: [
+    "피스",
+    "Piece",
+    "게이 소개팅",
+    "가치관 매칭",
+    "게이 데이팅",
+    "게이 앱",
+    "퀴어 데이팅",
+    "AI 매칭",
+    "진지한 만남",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "ko_KR",
+    url: "https://puzzly.site",
+    siteName: "피스(Piece)",
+    title: "피스(Piece) | 가치관 기반 게이 소개팅 앱",
+    description:
+      "마음이 닮은 이쪽 인연, AI가 매일 밤 10시에 데려와요. 가치관 기반 게이 소개팅, 피스.",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "피스(Piece) - 가치관 기반 게이 소개팅 앱",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "피스(Piece) | 가치관 기반 게이 소개팅 앱",
+    description:
+      "마음이 닮은 이쪽 인연, AI가 매일 밤 10시에 데려와요. 가치관 기반 게이 소개팅, 피스.",
+    images: ["/opengraph-image.png"],
+  },
   icons: {
     icon: "/favicon.png",
   },
