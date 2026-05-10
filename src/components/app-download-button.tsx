@@ -35,7 +35,7 @@ export default function AppDownloadButton() {
 
   // 공통 버튼 스타일
   const buttonClassName =
-    "font-semibold rounded-full py-3.5 px-7 lg:py-5 lg:px-9 h-auto text-base leading-6 lg:text-xl lg:leading-8 hover:bg-[#5D0EC0]";
+    "flex min-w-[100px] items-center justify-center font-semibold rounded-full py-3.5 px-7 lg:py-5 lg:px-9 h-auto text-base leading-6 lg:text-xl lg:leading-8 hover:bg-[#5D0EC0]";
 
   // ✅ PC일 경우: QR코드를 보여주는 Dialog를 렌더링
   if (device === "pc") {
