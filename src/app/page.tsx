@@ -6,8 +6,7 @@ import NightTen from "@/components/sections/v2/night-ten";
 import Safety from "@/components/sections/v2/safety";
 import Stats from "@/components/sections/v2/stats";
 import Testimonials from "@/components/sections/v2/testimonials";
-import ValueCardPick from "@/components/sections/v2/value-card-pick";
-import ValueCardTalk from "@/components/sections/v2/value-card-talk";
+import ValueCards from "@/components/sections/v2/value-cards";
 import Header from "@/components/sections/hero-section/header";
 
 export default function Page() {
@@ -17,8 +16,7 @@ export default function Page() {
       <Hero />
       <Stats />
       <NightTen />
-      <ValueCardTalk />
-      <ValueCardPick />
+      <ValueCards />
       <Safety />
       <Testimonials />
       <Faq />

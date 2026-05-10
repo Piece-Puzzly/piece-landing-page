@@ -5,14 +5,18 @@ export default function Stats() {
       aria-labelledby="stats-heading"
       className="relative overflow-hidden bg-white"
     >
-      <picture aria-hidden="true">
-        <source media="(min-width: 1280px)" srcSet="/stats-bg-pc.png" />
-        <img
-          src="/stats-bg-mobile.png"
-          alt=""
-          className="pointer-events-none absolute inset-0 z-0 size-full object-cover object-right-top select-none"
-        />
-      </picture>
+      <img
+        src="/stats-bg-mobile.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute top-0 left-0 z-0 w-[130vw] max-w-none select-none xl:hidden"
+      />
+      <img
+        src="/stats-bg-pc.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 hidden size-full object-cover object-right-top select-none xl:block"
+      />
 
       <div className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-col gap-[50px] px-6 py-16 md:px-10 xl:gap-[40px] xl:px-12 xl:pt-[120px] xl:pb-[180px]">
         <header className="flex flex-col items-start gap-[10px]">
