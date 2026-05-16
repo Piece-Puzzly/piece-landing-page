@@ -38,23 +38,26 @@ export default function Testimonials() {
                 idx === 1 ? "lg:max-w-[78%]" : "lg:max-w-[88%]"
               }`}
             >
-              <figure className="relative rounded-[20px] bg-white px-6 py-6 shadow-[0_4px_20px_rgba(111,0,251,0.06)] sm:px-8 sm:py-7">
-                <blockquote className="text-[16px] leading-[26px] font-medium text-primary sm:text-[18px] sm:leading-[28px]">
+              <figure className="relative rounded-[20px] bg-white px-6 py-6 shadow-[0_4px_20px_rgba(111,0,251,0.06)] sm:px-8 sm:py-7 lg:flex lg:flex-col lg:items-end lg:justify-center lg:gap-1 lg:pt-8 lg:pr-10 lg:pb-6 lg:pl-10">
+                <blockquote className="text-[16px] leading-[26px] font-medium text-primary sm:text-[18px] sm:leading-[28px] lg:self-stretch lg:text-[28px] lg:leading-[40px]">
                   {t.body}
                 </blockquote>
-                <figcaption className="mt-3 text-right text-sm font-semibold text-[#6c7073] sm:text-base">
+                <figcaption className="mt-3 text-right text-sm font-semibold text-[#6c7073] sm:text-base lg:mt-0 lg:text-center lg:text-[20px] lg:leading-[32px]">
                   {t.caption}
                 </figcaption>
 
                 <svg
                   aria-hidden="true"
-                  width="32"
-                  height="24"
-                  viewBox="0 0 32 24"
-                  fill="white"
-                  className="absolute -bottom-[14px] right-10"
+                  width="40"
+                  height="28"
+                  viewBox="0 0 40 28"
+                  fill="none"
+                  className="absolute -bottom-[28px] right-10"
                 >
-                  <path d="M0 0H32V4C32 14.4934 23.4934 24 13 24H0V0Z" />
+                  <path
+                    d="M40 0H0L33.5012 26.801C36.1203 28.8962 40 27.0315 40 23.6775V0Z"
+                    fill="white"
+                  />
                 </svg>
               </figure>
             </li>
