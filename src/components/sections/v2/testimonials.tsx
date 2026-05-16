@@ -1,14 +1,14 @@
 const testimonials = [
   {
-    body: "다른 이쪽 앱들은 가벼운 사람들이 많았는데 피스는 진지하게 임하시는 분들이 많아서 좋아요",
+    body: "다른 이쪽 앱들은 가벼운 사람들이 많았는데\n피스는 진지하게 임하시는 분들이 많아서 좋아요",
     caption: "20대 / 전문직",
   },
   {
-    body: "연애가 급하지는 않으니, 가치관과 성격이 잘 맞는 사람을 만나고 싶었어요",
+    body: "연애가 급하지는 않으니,\n가치관과 성격이 잘 맞는 사람을 만나고 싶었어요",
     caption: "30대 / 사업가",
   },
   {
-    body: "자판기에서 사람 고르는 느낌이 싫었는데 피스는 하루 한 명이라 신중해져요",
+    body: "자판기에서 사람 고르는 느낌이 싫었는데\n피스는 하루 한 명이라 신중해져요",
     caption: "20대 / 대학생",
   },
 ];
@@ -30,19 +30,19 @@ export default function Testimonials() {
           이렇게 말했어요
         </h2>
 
-        <ul className="mt-12 flex flex-col gap-10 lg:col-span-8 lg:mt-0 lg:items-end lg:gap-12">
+        <ul className="mt-12 flex flex-col gap-10 md:items-end md:gap-[52px] lg:col-span-8 lg:mt-0 lg:w-full lg:max-w-[774px] lg:justify-self-end lg:items-end lg:gap-[52px]">
           {testimonials.map((t, idx) => (
             <li
               key={t.caption}
-              className={`w-full ${
-                idx === 1 ? "lg:max-w-[78%]" : "lg:max-w-[88%]"
+              className={`w-full md:w-[480px] lg:w-[660px] lg:max-w-full ${
+                idx !== 1 ? "lg:self-start" : ""
               }`}
             >
-              <figure className="relative rounded-[20px] bg-white px-6 py-6 shadow-[0_4px_20px_rgba(111,0,251,0.06)] sm:px-8 sm:py-7 lg:flex lg:flex-col lg:items-end lg:justify-center lg:gap-1 lg:pt-8 lg:pr-10 lg:pb-6 lg:pl-10">
-                <blockquote className="text-[16px] leading-[26px] font-medium text-primary sm:text-[18px] sm:leading-[28px] lg:self-stretch lg:text-[28px] lg:leading-[40px]">
+              <figure className="relative flex flex-col items-end justify-center gap-1 rounded-[20px] bg-white pt-5 pr-5 pb-3 pl-5 shadow-[0_4px_20px_rgba(111,0,251,0.06)] sm:px-8 sm:py-7 lg:pt-8 lg:pr-10 lg:pb-6 lg:pl-10">
+                <blockquote className="self-stretch whitespace-pre-line text-[18px] leading-[22px] font-medium text-primary sm:leading-[28px] lg:text-[28px] lg:leading-[40px]">
                   {t.body}
                 </blockquote>
-                <figcaption className="mt-3 text-right text-sm font-semibold text-[#6c7073] sm:text-base lg:mt-0 lg:text-center lg:text-[20px] lg:leading-[32px]">
+                <figcaption className="text-center text-base leading-6 font-semibold text-[#6c7073] lg:text-[20px] lg:leading-[32px]">
                   {t.caption}
                 </figcaption>
 
