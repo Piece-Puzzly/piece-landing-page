@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 const testimonials = [
   {
     body: "다른 이쪽 앱들은 가벼운 사람들이 많았는데\n피스는 진지하게 임하시는 분들이 많아서 좋아요",
@@ -14,6 +18,28 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const listRef = useRef<HTMLUListElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = listRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.disconnect();
+            break;
+          }
+        }
+      },
+      { threshold: 0.2 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
       id="testimonials"
@@ -30,13 +56,19 @@ export default function Testimonials() {
           이렇게 말했어요
         </h2>
 
-        <ul className="mt-12 flex flex-col gap-10 md:items-end md:gap-[52px] lg:col-span-8 lg:mt-0 lg:w-full lg:max-w-[774px] lg:justify-self-end lg:items-end lg:gap-[52px]">
+        <ul
+          ref={listRef}
+          className="mt-12 flex flex-col gap-10 md:items-end md:gap-[52px] lg:col-span-8 lg:mt-0 lg:w-full lg:max-w-[774px] lg:justify-self-end lg:items-end lg:gap-[52px]"
+        >
           {testimonials.map((t, idx) => (
             <li
               key={t.caption}
-              className={`w-full md:w-[480px] lg:w-[660px] lg:max-w-full ${
+              className={`w-full transition-all duration-700 ease-out md:w-[480px] lg:w-[660px] lg:max-w-full ${
                 idx !== 1 ? "lg:self-start" : ""
+              } ${
+                visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
               }`}
+              style={{ transitionDelay: visible ? `${idx * 200}ms` : "0ms" }}
             >
               <figure className="relative flex flex-col items-end justify-center gap-1 rounded-[20px] bg-white pt-5 pr-5 pb-3 pl-5 shadow-[0_4px_20px_rgba(111,0,251,0.06)] sm:px-8 sm:py-7 lg:pt-8 lg:pr-10 lg:pb-6 lg:pl-10">
                 <blockquote className="self-stretch whitespace-pre-line text-[18px] leading-[22px] font-medium text-primary sm:leading-[28px] lg:text-[28px] lg:leading-[40px]">

@@ -1,4 +1,30 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 export default function ValueCards() {
+  const cardsRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = cardsRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.disconnect();
+            break;
+          }
+        }
+      },
+      { threshold: 0.2 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
       id="value-cards"
@@ -28,8 +54,15 @@ export default function ValueCards() {
           마음이 닮은 <span className="text-primary">한 사람</span>을 찾아줘요
         </h2>
 
-        <div className="flex w-full flex-col items-center gap-[64px] xl:max-w-[1200px] xl:flex-row xl:items-start xl:justify-between xl:gap-[40px]">
-          <article className="flex w-full max-w-[440px] flex-col items-center gap-6 xl:w-[420px] xl:max-w-none xl:flex-none xl:gap-8">
+        <div
+          ref={cardsRef}
+          className="flex w-full flex-col items-center gap-[64px] xl:max-w-[1200px] xl:flex-row xl:items-start xl:justify-between xl:gap-[40px]"
+        >
+          <article
+            className={`flex w-full max-w-[440px] flex-col items-center gap-6 transition-all duration-700 ease-out xl:w-[420px] xl:max-w-none xl:flex-none xl:gap-8 ${
+              visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}
+          >
             <div className="w-full xl:flex xl:h-[420px] xl:items-center xl:justify-center">
               <img
                 src="/talk-card.png"
@@ -48,7 +81,12 @@ export default function ValueCards() {
             </header>
           </article>
 
-          <article className="flex w-full max-w-[440px] flex-col items-center gap-6 xl:w-[420px] xl:max-w-none xl:flex-none xl:gap-8">
+          <article
+            className={`flex w-full max-w-[440px] flex-col items-center gap-6 transition-all duration-700 ease-out xl:w-[420px] xl:max-w-none xl:flex-none xl:gap-8 ${
+              visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}
+            style={{ transitionDelay: visible ? "280ms" : "0ms" }}
+          >
             <div className="w-full xl:flex xl:h-[420px] xl:items-center xl:justify-center">
               <img
                 src="/pick-card.png"
