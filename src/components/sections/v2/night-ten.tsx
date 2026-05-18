@@ -75,7 +75,7 @@ export default function NightTen() {
       <div className="mx-auto flex w-full max-w-[1440px] flex-col items-start gap-[50px] px-6 py-16 md:items-end md:px-10 xl:items-end xl:gap-0 xl:px-12 xl:py-[120px]">
         <h2
           id="night-ten-heading"
-          className="self-stretch text-[24px] leading-[32px] font-semibold xl:text-[36px] xl:leading-[48px]"
+          className="self-stretch text-[24px] leading-[32px] font-semibold xl:mx-auto xl:w-full xl:max-w-[1200px] xl:text-[36px] xl:leading-[48px]"
         >
           <span className="text-primary">매일 밤 10시,</span>
           <br />

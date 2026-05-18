@@ -47,7 +47,7 @@ export default function ValueCards() {
       <div className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-col items-center gap-[64px] px-6 py-16 md:px-10 md:py-20 xl:gap-[96px] xl:px-12 xl:py-[120px]">
         <h2
           id="value-cards-heading"
-          className="self-stretch text-[24px] leading-[32px] font-semibold text-[#1b1a2a] xl:text-[36px] xl:leading-[48px]"
+          className="self-stretch text-[24px] leading-[32px] font-semibold text-[#1b1a2a] xl:mx-auto xl:w-full xl:max-w-[1200px] xl:text-[36px] xl:leading-[48px]"
         >
           <span className="text-primary">AI</span>가 당신의 이야기를 모두 읽고,
           <br />

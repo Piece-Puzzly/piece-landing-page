@@ -7,7 +7,7 @@ export default function FinalCTA() {
       aria-labelledby="final-cta-heading"
       className="relative overflow-hidden bg-[#F6EFFF]"
     >
-      <div className="mx-auto flex w-full max-w-[1920px] flex-col items-center px-6 py-16 text-center sm:py-20 lg:px-15 lg:py-24">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center px-6 py-16 text-center sm:py-20 md:px-10 lg:py-24 xl:px-12">
         <h2
           id="final-cta-heading"
           className="text-[18px] leading-[28px] font-semibold tracking-tight text-[#1b1a2a] sm:text-[22px] sm:leading-[34px] lg:text-[28px] lg:leading-[40px]"

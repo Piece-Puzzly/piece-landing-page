@@ -46,7 +46,8 @@ export default function Testimonials() {
       aria-labelledby="testimonials-heading"
       className="relative overflow-hidden bg-[#F6EFFF]"
     >
-      <div className="mx-auto w-full max-w-[1920px] px-6 py-20 sm:py-24 lg:grid lg:grid-cols-12 lg:gap-8 lg:px-15 lg:py-32">
+      <div className="mx-auto w-full max-w-[1440px] px-6 py-20 sm:py-24 md:px-10 lg:py-32 xl:px-12">
+        <div className="lg:grid lg:grid-cols-12 lg:gap-8 xl:mx-auto xl:max-w-[1200px]">
         <h2
           id="testimonials-heading"
           className="text-[24px] leading-[32px] font-semibold tracking-tight text-[#1b1a2a] sm:text-[28px] sm:leading-[40px] lg:col-span-4 lg:text-[36px] lg:leading-[52px]"
@@ -95,6 +96,7 @@ export default function Testimonials() {
             </li>
           ))}
         </ul>
+        </div>
       </div>
     </section>
   );

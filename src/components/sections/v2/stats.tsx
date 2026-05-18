@@ -19,7 +19,7 @@ export default function Stats() {
       />
 
       <div className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-col gap-[50px] px-6 py-16 md:px-10 xl:gap-[40px] xl:px-12 xl:pt-[120px] xl:pb-[180px]">
-        <header className="flex flex-col items-start gap-[10px]">
+        <header className="flex flex-col items-start gap-[10px] xl:mx-auto xl:w-full xl:max-w-[1200px]">
           <h2
             id="stats-heading"
             className="text-[24px] leading-[32px] font-semibold tracking-tight text-[#1b1a2a] xl:text-[36px] xl:leading-[48px]"
@@ -33,7 +33,7 @@ export default function Stats() {
           </p>
         </header>
 
-        <dl className="flex flex-col gap-8 xl:flex-row xl:flex-wrap xl:gap-x-6 xl:gap-y-10 xl:pl-[687px]">
+        <dl className="flex flex-col gap-8 xl:mx-auto xl:w-full xl:max-w-[1200px] xl:flex-row xl:flex-wrap xl:gap-x-6 xl:gap-y-10 xl:pl-[687px]">
           <div className="xl:w-[318px]">
             <dt className="text-base leading-6 font-medium text-[#484b4d] xl:text-xl xl:leading-8">
               피스가 만난 사람들

@@ -44,15 +44,15 @@ export default function Faq() {
       aria-labelledby="faq-heading"
       className="relative overflow-hidden bg-white"
     >
-      <div className="mx-auto w-full max-w-[1920px] px-6 py-20 sm:py-24 lg:px-15 lg:py-32">
+      <div className="mx-auto w-full max-w-[1440px] px-6 py-20 sm:py-24 md:px-10 lg:py-32 xl:px-12">
         <h2
           id="faq-heading"
-          className="text-[24px] leading-[32px] font-semibold tracking-tight text-[#484b4d] sm:text-[28px] sm:leading-[40px] lg:text-[36px] lg:leading-[52px]"
+          className="text-[24px] leading-[32px] font-semibold tracking-tight text-[#484b4d] sm:text-[28px] sm:leading-[40px] lg:text-[36px] lg:leading-[52px] xl:mx-auto xl:w-full xl:max-w-[1200px]"
         >
           자주 묻는 질문
         </h2>
 
-        <ul className="mt-12 space-y-4 lg:mt-16 lg:space-y-5">
+        <ul className="mt-12 space-y-4 lg:mt-16 lg:space-y-5 xl:mx-auto xl:max-w-[1200px]">
           {faqs.map(({ icon: Icon, question, answer }) => (
             <li
               key={question}
