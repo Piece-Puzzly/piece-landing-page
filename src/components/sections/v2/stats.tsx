@@ -6,13 +6,13 @@ export default function Stats() {
       className="relative overflow-hidden bg-white"
     >
       <img
-        src="/stats-bg-mobile.png"
+        src="/BG1_mo.png"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute top-0 left-0 z-0 w-[130vw] max-w-none select-none xl:hidden"
+        className="pointer-events-none absolute top-1/2 right-[clamp(-300px,calc(50.9vw_-_491px),-100px)] z-0 w-[1100px] max-w-none -translate-y-1/2 select-none [mask-image:linear-gradient(to_bottom,transparent_0%,black_15%)] xl:hidden"
       />
       <img
-        src="/stats-bg-pc.png"
+        src="/BG1_pc.png"
         alt=""
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-0 hidden size-full object-cover object-right-top select-none xl:block"

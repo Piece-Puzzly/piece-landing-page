@@ -72,7 +72,7 @@ export default function NightTen() {
       aria-labelledby="night-ten-heading"
       className="relative overflow-hidden bg-[#f4f6fa]"
     >
-      <div className="flex flex-col items-start gap-[50px] px-6 py-16 md:items-end md:px-10 xl:items-end xl:gap-0 xl:px-12 xl:py-[120px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col items-start gap-[50px] px-6 py-16 md:items-end md:px-10 xl:items-end xl:gap-0 xl:px-12 xl:py-[120px]">
         <h2
           id="night-ten-heading"
           className="self-stretch text-[24px] leading-[32px] font-semibold xl:text-[36px] xl:leading-[48px]"
